@@ -14,10 +14,11 @@
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
     "react-native-elements": "^0.19.1",
-    "react-native-router-flux": "^4.0.6",
+    "react-native-image-picker": "^0.27.1",
     "react-navigation": "^2.18.2"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "babel-preset-expo": "^5.0.0",
+    "jest-expo": "~27.0.0"
   }
 }
