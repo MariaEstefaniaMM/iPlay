@@ -1,21 +1,41 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator } from 'react-navigation'; // 1.0.0-beta.27
+import { MenuScreen } from './app/screens/MenuScreen';
+import { FunScreen } from './app/screens/FunScreen';
+import { MusicScreen } from './app/screens/MusicScreen';
+import { TrackScreen } from './app/screens/TrackScreen';
+
+const RootStack = createStackNavigator(
+  {
+    MenuScreen: {
+      screen: MenuScreen,
+    },
+    MusicScreen: {
+      screen: MusicScreen,
+    },
+    FunScreen: {
+      screen: FunScreen,
+    }, 
+    TrackScreen: {
+      screen: TrackScreen,
+    }   
+  },
+  {
+    initialRouteName: 'MenuScreen',
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#f4511e',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    },
+  }
+);
 
 export default class App extends React.Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
+    return <RootStack />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
